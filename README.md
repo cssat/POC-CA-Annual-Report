@@ -12,3 +12,11 @@ A repository for sharing the scripts for creating the 2015 Annual Report measure
     - Permanency in 12 months for children in foster care for 24 months or longer
     - Re-entry to foster care in 12 months (permanency)
     - Placement stability (permanency)
+
+- POC Measures
+    
+    - Permanency in 12 months for children who are legally free
+    - Reports (safety)
+    - Screened-In Reports (safety)
+    - Placement Rate (safety)
+    
