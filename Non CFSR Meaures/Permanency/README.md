@@ -9,7 +9,7 @@ It is important the scripts are run in the correct order since they build off ea
 
 ### Dependencies
 
-1. prm_eth_census: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau race definitions which calssifies anyone with an hispanic backgrund, regardless of race, as hispanic. This is why the WHERE clause filters out 9, 10, 11, 12 since we only need 8 categtories:
+1. prm_eth_census: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau race definitions which classifies anyone with an hispanic background, regardless of race, as hispanic. This is why the WHERE clause filters out 9, 10, 11, 12 since we only need 8 categories:
 
     - 0. All Race/Ethnicity
     - 1. American Indian/Alaska Native
@@ -23,8 +23,26 @@ It is important the scripts are run in the correct order since they build off ea
 
 2. age_category: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau age categories:
 
-    - 1. 0 to 5
-    - 2. 6 to 11
-    - 3. 12 to 17
+    - 1. ages 0 to 5
+    - 2. ages 6 to 11
+    - 3. ages 12 to 17
 
 3. prm_region_6: used so that records are counted correctly with their respective region and the all category.
+
+### 1. Creating the non CFSR permanency table
+
+This is the first script that needs to be run and it creates an empty table with 6 columns:
+
+1. dat_year: 
+2. region: 
+3. sex: 
+4. race
+5. age_cat
+6. adopt_in_365
+
+### 2. Populating table with adoption within on year
+
+This is the only non cfsr permanence measure and will completely populated the non cfsr permanency table.
+
+
+

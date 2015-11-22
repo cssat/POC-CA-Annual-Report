@@ -19,12 +19,12 @@ Each of the scripts, with the exception of the create table script, have some de
 
 3. mb_census_population: This table is not actually based on census data but on [OFM age, sex, race and hispanic origin estimates](http://www.ofm.wa.gov/pop/asr/default.asp). This table is only used by rate_of_reports.
 
-### 1. Creating the non CFSR table
+### 1. Creating the non CFSR safety table
 
 This is the first script that needs to be run and it creates an empty table with 9 columns:
 
 1. fiscal_date: months in each fiscal year as a calendar date
-2. region: uses six regions along with 0 for all regions
+2. region: 
 3. order: this is used to distinguish from order specific non CFSR measures which are not currently included
 4. count_of_reports: populated by rate_of_reports and used by rate_of_screened_in_reports
 5. report_rate: populated by rate_of_reports
