@@ -11,13 +11,13 @@ It is important the scripts are run in the correct order since they build off ea
 
 1. prm_eth_census: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau race definitions which calssifies anyone with an hispanic backgrund, regardless of race, as hispanic. This is why the WHERE clause filters out 9, 10, 11, 12 since we only need 8 categtories:
 
-- 0. All Race/Ethnicity
-- 1. American Indian/Alaska Native
-- 2. Asian
-- 3. Black/African American
-- 4. Native Hawaiian/Other Pacific Islander
-- 5. Hispanic or Latino
-- 6. White/Caucasian
-- 7. Multiracial
-- 8. Unknown
+    - 0. All Race/Ethnicity
+    - 1. American Indian/Alaska Native
+    - 2. Asian
+    - 3. Black/African American
+    - 4. Native Hawaiian/Other Pacific Islander
+    - 5. Hispanic or Latino
+    - 6. White/Caucasian
+    - 7. Multiracial
+    - 8. Unknown
 
