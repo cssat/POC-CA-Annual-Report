@@ -173,7 +173,7 @@ DELETE @mytable
 
 UPDATE @mytable
 	SET adopted_in_365 = CASE
-		WHEN disreasn1 = 3 AND DATEDIFF(DAY, tpr, dodfcdt) <= 365 THEN 1
+		WHEN disreasn1 = 3 AND [dbo].[fnc_datediff_days](tpr, dodfcdt) <= 365 THEN 1
 		ELSE 0
 		END
 

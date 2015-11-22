@@ -37,7 +37,6 @@ It is important the scripts are run in the correct order since they build off ea
 
 2. fnc_datediff_mos: Custom POC function for getting date difference in months.
 
-
 ### 1. Creating the non CFSR permanency table
 
 This is the first script that needs to be run and it creates an empty table with 6 columns:
