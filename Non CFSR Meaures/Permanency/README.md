@@ -21,3 +21,10 @@ It is important the scripts are run in the correct order since they build off ea
     - 7. Multiracial
     - 8. Unknown
 
+2. age_category: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau age categories:
+
+    -1. 0 to 5
+    -2. 6 to 11
+    -3. 12 to 17
+
+3. prm_region_6: used so that records are counted correctly with their respective region and the all category.
