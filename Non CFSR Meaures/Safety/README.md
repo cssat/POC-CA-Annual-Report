@@ -25,9 +25,9 @@ This is the first script that needs to be run and it creates an empty table with
 
 ### 2. Populating table with rate of reports
 
-This is the second script that needs to be run and uses the rptIntake_children table as the basis for gett9ing the count of reports. This table also has a handful of dependecies that it relies on  
-    1. Script uses calendar_dim table allows us to aggregate reports by month in the proper federal fiscal year. The table that POC uses was provided by CA, please check schema in script before running.  
-    2. 
+This is the second script that needs to be run and uses the rptIntake_children table as the basis for gett9ing the count of reports. This table also has a handful of dependecies that it relies on: \
+> 1. Script uses calendar_dim table allows us to aggregate reports by month in the proper federal fiscal year. The table that POC uses was provided by CA, please check schema in script before running.  
+> 2. 
 
 
 ### 3. Populating table with rate of screened-in reports
