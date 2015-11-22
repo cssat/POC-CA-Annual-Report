@@ -4,10 +4,10 @@ It is important the scripts are run in the correct order since they build off ea
 
 ## Included Scripts
     
-    - create_non_cfsr_safety
-    - rate_of_reports
-    - rate_of_screened_in_reports
-    - rate_of_placement
+1. create_non_cfsr_safety
+2. rate_of_reports
+3. rate_of_screened_in_reports
+4. rate_of_placement
 
 ### Dependencies
 
@@ -23,15 +23,15 @@ Each of the scripts, with the exception of the create table script, have some de
 
 This is the first script that needs to be run and it creates an empty table with 9 columns:
 
-    - fiscal_date: months in each fiscal year as a calendar date
-    - region: uses six regions along with 0 for all regions
-    - order: this is used to distinguish from order specific non CFSR measures which are not currently included
-    - count_of_reports: populated by rate_of_reports and used by rate_of_screened_in_reports
-	- report_rate: populated by rate_of_reports
-	- count_of_screened_in_reports: populated by rate_of_reports and used by rate_of_placement
-	- screened_in_rate: populated by rate_of_reports
-	- count_of_placements: populated by rate_of_placement
-	- placement_rate: populated by rate_of_placement, not used by the other measures but kept for consistency
+    1. fiscal_date: months in each fiscal year as a calendar date
+    2. region: uses six regions along with 0 for all regions
+    3. order: this is used to distinguish from order specific non CFSR measures which are not currently included
+    4. count_of_reports: populated by rate_of_reports and used by rate_of_screened_in_reports
+	5. report_rate: populated by rate_of_reports
+	6. count_of_screened_in_reports: populated by rate_of_reports and used by rate_of_placement
+	7. screened_in_rate: populated by rate_of_reports
+	8. count_of_placements: populated by rate_of_placement
+	9. placement_rate: populated by rate_of_placement, not used by the other measures but kept for consistency
 
 ### 2. Populating table with rate of reports
 

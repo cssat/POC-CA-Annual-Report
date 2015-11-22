@@ -4,8 +4,8 @@ It is important the scripts are run in the correct order since they build off ea
 
 ## Included Scripts
     
-    - create_non_cfsr_permanency
-    - adoption_within_one_year_tpr
+1. create_non_cfsr_permanency
+2. adoption_within_one_year_tpr
 
 ### Dependencies
 
