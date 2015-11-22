@@ -4,13 +4,10 @@ It is important the scripts are run in the correct order since they build off ea
 
 ## Included Scripts
     
-> create_non_cfsr_safety
-
-> rate_of_reports
-
-> rate_of_screened_in_reports
-
-> rate_of_placement
+    - create_non_cfsr_safety
+    - rate_of_reports
+    - rate_of_screened_in_reports
+    - rate_of_placement
 
 ### Dependencies
 
@@ -38,12 +35,13 @@ This is the first script that needs to be run and it creates an empty table with
 
 ### 2. Populating table with rate of reports
 
-This is the second script that needs to be run and uses the rptIntake_children table as the basis for getting the count of reports. This table also has a handful of dependencies that it relies on: 
-> 1. Script uses a calendar table allows us to aggregate reports by month in the proper federal fiscal year. The table that POC uses was provided by CA (calendar_dim), please check schema in script before running.  
-> 2. Script uses a table to lookup region and county, this is used in two places. In the POC data base this table is called ref_lookup_county and has columns for county name, codes for 3 and 6 regions, text for 6 regions and the county fips.
-> 3. 
-
+This is the second script that needs to be run and uses the rptIntake_children table as the basis for getting the count of reports. 
 
 ### 3. Populating table with rate of screened-in reports
 
+This is the third script that needs to be run and it uses the NCANDS data, along with the counts that were created from rate_of_reports
+
 ### 4. Populating table with rate of placement
+
+This is the forth script that needs to be run and it uses the NCANDS data, along with the counts that were created from rate_of_screened_in_reports
+
