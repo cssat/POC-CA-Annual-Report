@@ -13,17 +13,11 @@ It is important the scripts are run in the correct order since they build off ea
 
 Each of the table creation scripts have some depencies on other tables in the POC database, some table provided by CA, and some that POC created. Below is a description of each of the tables:
 
-> 1. calendar_dim: used to aggregate reports into proper month and fiscal year. This table was provided to POC by CA.
-        - used by rate_of_reports, rate_of_screened_in_reports, rate_of_placement
-> 2. ref_lookup_county: used to create inline views so that records are counted in the correct region and at the state level. The table is also used to match our population table to the correct regions. Columns in the table include county name, codes for 3 and 6 regions, text for 6 regions and the 5 digit county fips
+> 1. calendar_dim: used to aggregate reports into proper month and fiscal year. This table was provided to POC by CA and is used by rate_of_reports, rate_of_screened_in_reports, rate_of_placement.
 
-> 3.
+> 2. ref_lookup_county: used to create inline views so that records are counted in the correct region and at the state level. The table is also used to match our population table to the correct regions. Columns in the table include county name, codes for 3 and 6 regions, text for 6 regions and the 5 digit county fips. This table is used by rate_of_reports, rate_of_screened_in_reports, rate_of_placement.
 
-> 1. Script uses a calendar table allows us to aggregate reports by month in the proper federal fiscal year. The table that POC uses was provided by CA (calendar_dim), please check schema in script before running.  
-> 2. Script uses a table to lookup region and county, this is used in two places. In the POC data base this table is called ref_lookup_county and has columns for county name, codes for 3 and 6 regions, text for 6 regions and the county fips.
-> 3. 
-
-
+> 3. mb_census_population: This table is not actually based on census data but on [OFM age, sex, race and hispanic origin estimates](http://www.ofm.wa.gov/pop/asr/default.asp). This table is only used by rate_of_reports.
 
 ### 1. Creating the non CFSR table
 
