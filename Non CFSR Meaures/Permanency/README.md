@@ -1,22 +1,13 @@
-# POC-CA-Annual-Report
-A repository for sharing the scripts for creating the 2015 Annual Report measures.
-
-## Included Measures
-
-- CFSR Meaures
-
-    - Maltreatment in foster care (safety)
-    - Recurrence of maltreatment (safety)
-    - Permanency in 12 months for children entering foster care
-    - Permanency in 12 months for children in foster care 12 to 23 months
-    - Permanency in 12 months for children in foster care for 24 months or longer
-    - Re-entry to foster care in 12 months (permanency)
-    - Placement stability (permanency)
-
-- POC Measures
+# Creating Non CFSR Permanency Measures
     
-    - Permanency in 12 months for children who are legally free
-    - Reports (safety)
-    - Screened-In Reports (safety)
-    - Placement Rate (safety)
+It is important the scripts are run in the correct order since they build off each other and need to be run in the order that they appear below.
+
+## Included Scripts
     
+    - create_non_cfsr_permanency
+    - adoption_within_one_year_tpr
+
+### Dependencies
+
+1 
+
