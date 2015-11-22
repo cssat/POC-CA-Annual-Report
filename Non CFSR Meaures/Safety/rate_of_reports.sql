@@ -13,7 +13,7 @@ SELECT
 	,reg.old_region_cd
 	,report_order
 	,COUNT(*) AS 'count_of_reports'
-	,COUNT(*) * 1.0 / pop_cnt * 1000 AS 'referral_rate'
+	,COUNT(*) * 1.0 / pop_cnt * 1000 AS 'report_rate'
 FROM (SELECT
 		ID_ACCESS_REPORT
 		,DT_ACCESS_RCVD
@@ -30,7 +30,7 @@ FROM (SELECT
 				THEN 0
 				ELSE 1
 			END AS drop_flag
-		FROM [CA_ODS].[base].[rptIntake_children]
+		FROM [base].[rptIntake_children]
 		WHERE CPS_YESNO = 'Yes') AS ic
 LEFT JOIN (SELECT DISTINCT
 				FEDERAL_FISCAL_MONTH AS fiscal_date
@@ -41,13 +41,13 @@ LEFT JOIN (SELECT DISTINCT
 LEFT JOIN (SELECT DISTINCT
 				0 AS old_region_cd
 				,old_region_cd AS region_match
-			FROM [CA_ODS].[dbo].[ref_lookup_county]
+			FROM [dbo].[ref_lookup_county]
 			WHERE old_region_cd != -99
 			UNION ALL
 			SELECT DISTINCT
 				old_region_cd
 				,old_region_cd AS region_match
-			FROM [CA_ODS].[dbo].[ref_lookup_county]
+			FROM [dbo].[ref_lookup_county]
 			WHERE old_region_cd > 0) AS reg
 	ON ic.region = reg.region_match
 LEFT JOIN (SELECT 
@@ -58,12 +58,12 @@ LEFT JOIN (SELECT
 			LEFT JOIN (SELECT DISTINCT
 							0 AS old_region_cd
 							,county_desc AS region_match
-						FROM [CA_ODS].[dbo].[ref_lookup_county]
+						FROM [dbo].[ref_lookup_county]
 						UNION ALL
 						SELECT DISTINCT
 							old_region_cd
 							,county_desc AS region_match
-						FROM [CA_ODS].[dbo].[ref_lookup_county]) AS reg
+						FROM [dbo].[ref_lookup_county]) AS reg
 				ON pop.county_desc = reg.region_match
 			GROUP BY
 				year
@@ -82,3 +82,5 @@ ORDER BY
 	,reg.old_region_cd
 	,report_order
 
+
+SELECT * FROM [dbo].[ref_lookup_county]

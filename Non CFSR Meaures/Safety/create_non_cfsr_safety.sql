@@ -7,7 +7,7 @@ CREATE TABLE annual_report.non_cfsr_safety
 	,region TINYINT
 	,[order] TINYINT
 	,count_of_reports INT
-	,referral_rate DECIMAL (8, 4)
+	,report_rate DECIMAL (8, 4)
 	,count_of_screened_in_reports INT
 	,screened_in_rate DECIMAL (8, 4)
 	,count_of_placements INT

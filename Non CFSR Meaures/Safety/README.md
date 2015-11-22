@@ -5,8 +5,11 @@ It is important the scripts are run in the correct order since they build off ea
 ## Included Scripts
     
 > create_non_cfsr_safety
+
 > rate_of_reports
+
 > rate_of_screened_in_reports
+
 > rate_of_placement
 
 ### Dependencies
