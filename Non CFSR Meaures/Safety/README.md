@@ -11,7 +11,7 @@ It is important the scripts are run in the correct order since they build off ea
 
 ### Dependencies
 
-Each of the table creation scripts have some depencies on other tables in the POC database, some table provided by CA, and some that POC created. Below is a description of each of the tables:
+Each of the scripts, with the exception of the create table script, have some depencies on other tables in the POC database, some table provided by CA, and some that POC created. Below is a description of each of the tables:
 
 > 1. calendar_dim: used to aggregate reports into proper month and fiscal year. This table was provided to POC by CA and is used by rate_of_reports, rate_of_screened_in_reports, rate_of_placement.
 
