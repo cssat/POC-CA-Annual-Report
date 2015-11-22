@@ -9,6 +9,8 @@ It is important the scripts are run in the correct order since they build off ea
 
 ### Dependencies
 
+#### Tables
+
 1. prm_eth_census: used so that records are counted correctly with their respective race and the all category. POC is using the Children's Bureau race definitions which classifies anyone with an hispanic background, regardless of race, as hispanic. This is why the WHERE clause filters out 9, 10, 11, 12 since we only need 8 categories:
 
     - 0. All Race/Ethnicity
@@ -29,6 +31,13 @@ It is important the scripts are run in the correct order since they build off ea
 
 3. prm_region_6: used so that records are counted correctly with their respective region and the all category.
 
+#### Functions
+
+1. fnc_datediff_days: Custom POC function for getting date difference in days.
+
+2. fnc_datediff_mos: Custom POC function for getting date difference in months.
+
+
 ### 1. Creating the non CFSR permanency table
 
 This is the first script that needs to be run and it creates an empty table with 6 columns:
@@ -40,9 +49,9 @@ This is the first script that needs to be run and it creates an empty table with
 5. age_cat
 6. adopt_in_365
 
-### 2. Populating table with adoption within on year
+### 2. Populating table with adoption within one year
 
-This is the only non cfsr permanence measure and will completely populated the non cfsr permanency table.
+This is the only non cfsr permanency measure and will completely populated the non cfsr permanency table.
 
 
 
