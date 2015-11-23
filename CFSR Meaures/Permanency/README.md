@@ -57,7 +57,7 @@ It is important the scripts are run in the correct order since they build off ea
 6. years_in_care
 6. placement_stability
 
-### 2 Populating placement mobility table
+### 2. Populating placement mobility table
 
 This is the first, and currently the only script for populating the table. 
 
@@ -76,11 +76,11 @@ This is the first, and currently the only script for populating the table.
 9. permanency_12_months
 10. re_entry
 
-### Perm first day
+### 2. Perm first day
 
 This is the second script that needs to be run for the cfsr permanency table. This script populates the table with dat_year, region, sex, age_cat, cd_discharge (discharge type) along with perm_months_12_23 and Perm_months_24
 
-### Perm for entries and re-entries
+### 3. Perm for entries and re-entries
 
 This is the second script that needs to be run for the cfsr permanency table. This script populates the permanenc_in_12_months and re_entry.
 
