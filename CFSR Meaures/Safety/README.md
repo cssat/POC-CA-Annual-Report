@@ -9,10 +9,6 @@ It is important the scripts are run in the correct order since they build off ea
 
 ### Dependencies
 
-#### Tables/Views
-
-
-
 #### Functions
 
 1. fnc_datediff_days: Custom POC function for getting date difference in days.
@@ -21,22 +17,16 @@ It is important the scripts are run in the correct order since they build off ea
 
 3. fnc_datediff_yrs: Custom POC function used for getting date difference in years, this function is useful for age.
 
+### 1. Creating the cfsr safety table
 
+1. dat_year
+2. maltreatment_in_care
+3. recurrence_of_maltreatment
 
-- CFSR Meaures
+### 2. Maltreatment in Care
 
-    - Maltreatment in foster care (safety)
-    - Recurrence of maltreatment (safety)
-    - Permanency in 12 months for children entering foster care
-    - Permanency in 12 months for children in foster care 12 to 23 months
-    - Permanency in 12 months for children in foster care for 24 months or longer
-    - Re-entry to foster care in 12 months (permanency)
-    - Placement stability (permanency)
+This is the second script that needs to be run and it populates dat_year and maltreatment_in_care.
 
-- POC Measures
-    
-    - Permanency in 12 months for children who are legally free
-    - Reports (safety)
-    - Screened-In Reports (safety)
-    - Placement Rate (safety)
-    
+### 2. Recurrenc of Maltreatment
+
+This is the third script that needs to be run and it populates recurrence_of_maltreatment.
