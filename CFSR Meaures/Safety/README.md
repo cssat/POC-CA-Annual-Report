@@ -1,7 +1,27 @@
 # POC-CA-Annual-Report
-A repository for sharing the scripts for creating the 2015 Annual Report measures.
+It is important the scripts are run in the correct order since they build off each other and need to be run in the order that they appear below.
 
-## Included Measures
+## Included Scripts
+
+- 1. create_cfsr_safety
+- 2. maltreatment_in_care
+- 3. maltreatment_recurrance
+
+### Dependencies
+
+#### Tables/Views
+
+
+
+#### Functions
+
+1. fnc_datediff_days: Custom POC function for getting date difference in days.
+
+2. fnc_datediff_mos: Custom POC function for getting date difference in months.
+
+3. fnc_datediff_yrs: Custom POC function used for getting date difference in years, this function is useful for age.
+
+
 
 - CFSR Meaures
 
