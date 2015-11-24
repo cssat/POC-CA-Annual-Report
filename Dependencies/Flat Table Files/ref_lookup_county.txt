@@ -1,0 +1,44 @@
+county_cd,county_desc,cd_region,old_region_cd,old_region_desc,countyfips
+-99,-,-99,-99,-,
+0,All,0,0,-,
+1,Adams,1,1,Region 1,53001
+2,Asotin,1,1,Region 1,53003
+3,Benton,1,2,Region 2,53005
+4,Chelan,1,1,Region 1,53007
+5,Clallam,3,6,Region 6,53009
+6,Clark,3,6,Region 6,53011
+7,Columbia,1,2,Region 2,53013
+8,Cowlitz,3,6,Region 6,53015
+9,Douglas,1,1,Region 1,53017
+10,Ferry,1,1,Region 1,53019
+11,Franklin,1,2,Region 2,53021
+12,Garfield,1,1,Region 1,53023
+13,Grant,1,1,Region 1,53025
+14,Grays Harbor,3,6,Region 6,53027
+15,Island,2,3,Region 3,53029
+16,Jefferson,3,6,Region 6,53031
+17,King,2,4,Region 4,53033
+18,Kitsap,3,5,Region 5,53035
+19,Kittitas,1,2,Region 2,53037
+20,Klickitat,1,2,Region 2,53039
+21,Lewis,3,6,Region 6,53041
+22,Lincoln,1,1,Region 1,53043
+23,Mason,3,6,Region 6,53045
+24,Okanogan,1,1,Region 1,53047
+25,Pacific,3,6,Region 6,53049
+26,Pend Oreille,1,1,Region 1,53051
+27,Pierce,3,5,Region 5,53053
+28,San Juan,2,3,Region 3,53055
+29,Skagit,2,3,Region 3,53057
+30,Skamania,3,6,Region 6,53059
+31,Snohomish,2,3,Region 3,53061
+32,Spokane,1,1,Region 1,53063
+33,Stevens,1,1,Region 1,53065
+34,Thurston,3,6,Region 6,53067
+35,Wahkiakum,3,6,Region 6,53069
+36,Walla Walla,1,2,Region 2,53071
+37,Whatcom,2,3,Region 3,53073
+38,Whitman,1,1,Region 1,53075
+39,Yakima,1,2,Region 2,53077
+40,Other/Out of State,999,-99,-,
+999,State Level Location,-99,-99,-,
