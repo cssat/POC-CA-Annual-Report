@@ -5,7 +5,7 @@ INSERT INTO annual_report.non_cfsr_safety
 	,region
 	,[order]
 	,count_of_reports
-	,referral_rate
+	,report_rate
     )
 
 SELECT 
@@ -82,5 +82,3 @@ ORDER BY
 	,reg.old_region_cd
 	,report_order
 
-
-SELECT * FROM [dbo].[ref_lookup_county]
