@@ -341,7 +341,7 @@
 					,IIF(dtreportend = dtreportendfinal, 888, [dbo].[fnc_datediff_mos](dtreportbeg, LEAD(dtreportbeg, 1, NULL) OVER (PARTITION BY childid ORDER BY dtreportbeg))) AS timebetweenreports
 				FROM
 					(SELECT 
-					    recnumbr
+					    a.recnumbr
 						,dob
 						,fipscode
 						,pedrevdt
@@ -366,13 +366,23 @@
 						,curplset
 						,dodfcdt
 						,disreasn
-						,DENSE_RANK () OVER (ORDER BY recnumbr) AS childid
-						,repdat
-						,IIF(RIGHT(repdat, 1) = 3, DATEFROMPARTS(LEFT(repdat, 4) - 1, 10, 1), DATEFROMPARTS(LEFT(repdat, 4), 4, 1)) AS dtreportbeg
-						,IIF(RIGHT(repdat, 1) = 3, DATEFROMPARTS(LEFT(repdat, 4), 3, 31), DATEFROMPARTS(LEFT(repdat, 4), 9, 30)) AS  dtreportend
+						,DENSE_RANK () OVER (ORDER BY a.recnumbr) AS childid
+						,a.repdat
+						,IIF(RIGHT(a.repdat, 1) = 3, DATEFROMPARTS(LEFT(a.repdat, 4) - 1, 10, 1), DATEFROMPARTS(LEFT(a.repdat, 4), 4, 1)) AS dtreportbeg
+						,IIF(RIGHT(a.repdat, 1) = 3, DATEFROMPARTS(LEFT(a.repdat, 4), 3, 31), DATEFROMPARTS(LEFT(a.repdat, 4), 9, 30)) AS  dtreportend
 						,'2015-03-31' AS dtreportendfinal 
-					FROM [CA_ODS].[annual_report].[ca_fc_afcars_extracts]
-						) AS id) AS id) AS id) AS id
+					FROM [annual_report].[ca_fc_afcars_extracts] AS a
+					LEFT JOIN (SELECT
+									recnumbr
+									,repdat
+									,COUNT(*) AS dup	
+								FROM [annual_report].[ca_fc_afcars_extracts] 
+								GROUP BY
+									recnumbr
+									,repdat) AS dups
+								ON a.recnumbr = dups.recnumbr
+								AND a.repdat = dups.repdat
+								WHERE dup = 1) AS id) AS id) AS id) AS id
 ORDER BY
 	childid
 	,dtreportbeg
@@ -549,7 +559,6 @@ INSERT INTO annual_report.ca_afcars_source_data
 	,disreasn2
 	,tremcat
 	)
-
 
 SELECT
 	recnumbr
