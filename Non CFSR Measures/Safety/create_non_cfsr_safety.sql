@@ -3,7 +3,7 @@ IF OBJECT_ID ('annual_report.non_cfsr_safety') IS NOT NULL DROP TABLE annual_rep
 
 CREATE TABLE annual_report.non_cfsr_safety
 (
-	fiscal_date DATE
+	fiscal_year DATE
 	,region TINYINT
 	,[order] TINYINT
 	,count_of_reports INT
@@ -13,4 +13,3 @@ CREATE TABLE annual_report.non_cfsr_safety
 	,count_of_placements INT
 	,placement_rate DECIMAL (8, 4)
 )
-

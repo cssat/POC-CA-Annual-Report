@@ -4,7 +4,7 @@ SET count_of_screened_in_reports = b.count_of_screened_in_reports
 	,screened_in_rate = b.screened_in_rate
 FROM annual_report.non_cfsr_safety AS a
 LEFT JOIN (SELECT
-				cd.fiscal_date
+				cd.fiscal_year
 				,reg.old_region_cd AS 'region'
 				,0 AS 'order'
 				,COUNT(*) 'count_of_screened_in_reports'
@@ -26,18 +26,18 @@ LEFT JOIN (SELECT
 					   WHERE old_region_cd > 0) AS reg
 				ON ic.rptcnty = reg.county_match
 			LEFT JOIN (SELECT DISTINCT
-							FEDERAL_FISCAL_MONTH AS fiscal_date
+							FEDERAL_FISCAL_YEAR AS fiscal_year
 							,CALENDAR_DATE AS date_match
 					   FROM [dbo].[CALENDAR_DIM]) AS cd
 				ON ic.rptdt = cd.date_match
 			LEFT JOIN annual_report.non_cfsr_safety AS sa
-				ON sa.fiscal_date = cd.fiscal_date
+				ON sa.fiscal_year = cd.fiscal_year
 				AND sa.region = reg.old_region_cd
 			GROUP BY
-				cd.fiscal_date
+				cd.fiscal_year
 				,reg.old_region_cd
 				,sa.count_of_reports) AS b
-ON a.fiscal_date = b.fiscal_date
+ON a.fiscal_year = b.fiscal_year
 AND a.region = b.region
 AND a.[order] = b.[order]
 
