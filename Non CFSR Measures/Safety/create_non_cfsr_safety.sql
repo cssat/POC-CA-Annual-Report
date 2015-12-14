@@ -3,7 +3,8 @@ IF OBJECT_ID ('annual_report.non_cfsr_safety') IS NOT NULL DROP TABLE annual_rep
 
 CREATE TABLE annual_report.non_cfsr_safety
 (
-	fiscal_year DATE
+	fiscal_year_date DATE
+	,fiscal_year INT
 	,region TINYINT
 	,[order] TINYINT
 	,count_of_reports INT

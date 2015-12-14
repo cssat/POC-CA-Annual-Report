@@ -1,7 +1,8 @@
 
 INSERT INTO annual_report.non_cfsr_safety
     (
-	fiscal_year
+	fiscal_year_date
+	,fiscal_year
 	,region
 	,[order]
 	,count_of_reports
@@ -9,7 +10,8 @@ INSERT INTO annual_report.non_cfsr_safety
     )
 
 SELECT 
-	fiscal_year
+	fiscal_year_date
+	,fiscal_year
 	,reg.old_region_cd
 	,report_order
 	,COUNT(*) AS 'count_of_reports'
@@ -33,7 +35,8 @@ FROM (SELECT
 		FROM [base].[rptIntake_children]
 		WHERE CPS_YESNO = 'Yes') AS ic
 LEFT JOIN (SELECT DISTINCT
-				FEDERAL_FISCAL_YEAR AS fiscal_year
+				FEDERAL_FISCAL_YEAR AS fiscal_year_date
+				,FEDERAL_FISCAL_YYYY AS fiscal_year
 				,CALENDAR_DATE AS date_match
 			FROM [dbo].[CALENDAR_DIM]
 			WHERE FEDERAL_FISCAL_YYYY BETWEEN 2010 AND 2014) AS cd
@@ -73,12 +76,14 @@ ON pop.year = YEAR(fiscal_year)
 WHERE drop_flag = 1
 	AND fiscal_year IS NOT NULL
 GROUP BY
-	fiscal_year
+	fiscal_year_date
+	,fiscal_year
 	,reg.old_region_cd
 	,report_order
 	,pop_cnt
 ORDER BY
-	fiscal_year
+	fiscal_year_date
+	,fiscal_year
 	,reg.old_region_cd
 	,report_order
 
