@@ -71,7 +71,7 @@ LEFT JOIN (SELECT
 			GROUP BY
 				year
 				,reg.old_region_cd) AS pop
-ON pop.year = YEAR(fiscal_year)
+ON pop.year = YEAR(fiscal_year_date)
 	AND pop.old_region_cd = reg.old_region_cd
 WHERE drop_flag = 1
 	AND fiscal_year IS NOT NULL
