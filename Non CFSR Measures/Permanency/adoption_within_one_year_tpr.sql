@@ -78,9 +78,9 @@ DECLARE @mytable TABLE
 -- START OF LOOP --
 -------------------
  
---WHILE @year <= 2014
---BEGIN 
---DELETE @mytable
+WHILE @year <= 2015
+BEGIN 
+DELETE @mytable
 
 INSERT INTO @mytable
 
@@ -276,18 +276,36 @@ UPDATE @mytable
 		WHEN age_at_exit > 11 AND age_at_exit < 18 THEN 3
 		END
 
--- NEED TO ADD 
+-- Inserting data into table
+
+INSERT INTO annual_report.non_cfsr_permanency
+	(
+	dat_year
+	,region
+	,sex
+	,race
+	,age_cat
+	,adopt_in_365
+	)
 
 SELECT
 	@year AS dat_year
-	,r.region_6_cd
-	,g.pk_gndr
-	,e.cd_race
-	,a.cd_age_cat
-	,SUM(adopted_in_365) * 1.0 / COUNT(m.adopted_in_365) AS adopt_in_365
-FROM (SELECT pk_gndr, match_code FROM dbo.prm_gndr WHERE match_code != 3) AS g
+	,r.region_6_cd AS region
+	,g.pk_gndr	AS sex
+	,e.cd_race AS race
+	,a.cd_age_cat AS age_cat
+	,SUM(adopted_in_365) * 1.0 / COUNT(m.adopted_in_365) AS 'adopt_in_365'
+FROM (SELECT	
+		pk_gndr
+		,match_code 
+	   FROM dbo.prm_gndr 
+	   WHERE match_code != 3) AS g
 CROSS JOIN [dbo].[prm_region_6] AS r
-CROSS JOIN (SELECT DISTINCT cd_race, match_code	FROM [dbo].[prm_eth_census] WHERE cd_race NOT IN (9, 10, 11, 12)) AS e
+CROSS JOIN (SELECT DISTINCT 
+				cd_race
+				,match_code	
+			FROM [dbo].[prm_eth_census] 
+			WHERE cd_race NOT IN (9, 10, 11, 12)) AS e
 CROSS JOIN [annual_report].[age_category] AS a
 LEFT JOIN @mytable AS m
 	ON m.sex  = g.match_code 
@@ -304,10 +322,9 @@ ORDER BY
 	,g.pk_gndr
 	,e.cd_race
 	,a.cd_age_cat
+SET @year = @year + 1
 
---SET @year = @year + 1
+SET @dtperiodbeg = IIF(@period = 'AB', DATEFROMPARTS(@year - 1, 10, 01), DATEFROMPARTS(@year - 1, 04, 01))
+SET @dtperiodend = IIF(@period = 'AB', DATEFROMPARTS(@year, 09, 30), DATEFROMPARTS(@year, 03, 31))
 
---SET @dtperiodbeg = IIF(@period = 'AB', DATEFROMPARTS(@year - 1, 10, 01), DATEFROMPARTS(@year - 1, 04, 01))
---SET @dtperiodend = IIF(@period = 'AB', DATEFROMPARTS(@year, 09, 30), DATEFROMPARTS(@year, 03, 31))
-
---END
+END

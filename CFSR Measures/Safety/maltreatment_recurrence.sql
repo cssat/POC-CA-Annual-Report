@@ -28,7 +28,7 @@ SET @dtperiodend = IIF(@period = 'AB', DATEFROMPARTS(@year, 09, 30), DATEFROMPAR
 -- START OF LOOP --
 -------------------
  
-WHILE @year <= 2014
+WHILE @year <= 2015
 BEGIN 
 
 IF OBJECT_ID ('tempdb..#ncands') IS NOT NULL DROP TABLE #ncands

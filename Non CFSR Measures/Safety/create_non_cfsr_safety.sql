@@ -14,4 +14,3 @@ CREATE TABLE annual_report.non_cfsr_safety
 	,count_of_placements INT
 	,placement_rate DECIMAL (8, 4)
 )
-

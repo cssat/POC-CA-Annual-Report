@@ -80,7 +80,7 @@ DECLARE @mytable TABLE
 -- START OF LOOP --
 -------------------
  
-WHILE @year <= 2014
+WHILE @year <= 2015
 BEGIN 
 DELETE @mytable
 

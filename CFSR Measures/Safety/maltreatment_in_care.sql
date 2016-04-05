@@ -79,7 +79,7 @@ CREATE TABLE #afcars
 -- START OF LOOP --
 -------------------
  
-WHILE @year <= 2014
+WHILE @year <= 2015
 BEGIN 
 DELETE #afcars
 
@@ -648,12 +648,12 @@ UPDATE a
 -- the final query to eliminate duplicate records.
 
 
---INSERT INTO annual_report.cfsr_safety
+INSERT INTO annual_report.cfsr_safety
 
---    (
---     dat_year
---	 ,maltreatment_in_care
---    )
+    (
+     dat_year
+	 ,maltreatment_in_care
+    )
 
 SELECT
 	@year AS dat_year

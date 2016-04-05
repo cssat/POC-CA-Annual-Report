@@ -10,3 +10,4 @@ IF OBJECT_ID ('annual_report.cfsr_safety') IS NOT NULL DROP TABLE annual_report.
  )
 
 
+ SELECT * FROM annual_report.cfsr_safety
