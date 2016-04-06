@@ -9,5 +9,3 @@ IF OBJECT_ID ('annual_report.cfsr_safety') IS NOT NULL DROP TABLE annual_report.
 	,recurrence_of_maltreatment DECIMAL (7, 4)
  )
 
-
- SELECT * FROM annual_report.cfsr_safety
